@@ -13,7 +13,7 @@ $this->registerJsFile('js/catalog.js');
 ?>
 
 <div class="row">
-    <table>
+    <table width="100%">
         <tr>
             <td class="vert_top">
         <h2 class="text-center"><?= $subcategory->Name ?></h2>
@@ -52,7 +52,7 @@ $this->registerJsFile('js/catalog.js');
         if ($more) echo '<a href="#" class="show_more" id="'.$subcategory->ID.'">показать еще</a>';
         ?>
             </td>
-            <td class="vert_top index_banner">
+            <td class="vert_top index_banner2">
                 <div class="banner">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Страница заведений небоскреб -->

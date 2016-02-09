@@ -568,6 +568,18 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionAddimgevent() {
+        $ev = Yii::$app->request->post('event_id');
+        $ext = substr(basename($_FILES['photo_event']['name']), strrpos(basename($_FILES['photo_event']['name']), '.'));
+        $name = $ev.$ext;
+        $success = move_uploaded_file($_FILES['photo_event']['tmp_name'], 'img/events/'.$name);
+        echo '<img src="img/events/'.$name.'" width="100%" alt="">';
+    }
+
+    public function actionDelimgevent($photo) {
+        return unlink('img/establishments/'.$photo);
+    }
+
     public function actionGeteventsubs($cat) {
         $cats = Subcategoryevent::find()->where(['CategoryeventID' => $cat])->all();
         $res = '<option value="">подкатегория</option>';

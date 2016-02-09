@@ -96,7 +96,7 @@ $this->registerJsFile('js/index.js');
     </table>
 </div>
 <div class="row white_cont">
-    <h2 class="text-center"><a href="news">Новости города</a></h2>
+    <h2 class="text-center"><a href="news">Жизнь города</a></h2>
     <ul class="city_news">
         <?php
         foreach ($news as $item) {

@@ -71,4 +71,11 @@ return array (
             '@himiklab/yii2/recaptcha' => $vendorDir . '/himiklab/yii2/recaptcha',
         ),
     ),
+    'yii/jui' => array (
+        'name' => 'yii/jui',
+        'version' => '2',
+        'alias' => array (
+            '@yii/jui' => $vendorDir . '/yii/jui',
+        ),
+    ),
 );

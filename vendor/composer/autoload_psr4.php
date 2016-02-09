@@ -18,4 +18,5 @@ return array(
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'marekpetras\\calendarview\\' => array($vendorDir . '/marekpetras/calendarview'),
     'himiklab\\yii2\\recaptcha\\' => array($vendorDir . '/himiklab/yii2/recaptcha'),
+    'yii\\jui\\' => array($vendorDir . '/yii/jui'),
 );

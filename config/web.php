@@ -34,6 +34,7 @@ $config = [
                 'add_img' => 'site/addestimg',
                 'del_img' => 'site/delestimg',
                 'add_est' => 'site/addest',
+                'add_img_event' => 'site/addimgevent',
             ],
         ],
         'formatter' => [

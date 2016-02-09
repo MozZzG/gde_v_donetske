@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    $('#myCarousel').carousel('pause');
 
     $('body').on('click', 'a.add_photo', function(e) {
         e.preventDefault();
@@ -74,7 +74,8 @@ $(document).ready(function() {
             success: function(response){
                 if (response) {
                     $('#window_afisha .modal-body').html(response);
-                    $('#window_afisha').modal('show');
+                    $('#window_afisha').show();
+                    $('#window_afisha').addClass('in');
                 }
             }
         });
@@ -89,5 +90,20 @@ $(document).ready(function() {
                 }
             }
         });
+    });
+
+    $('#window_afisha').on('click', '.img img', function() {
+        $('#add_photo_event').click();
+    });
+    $('#window_afisha').on('change', '#add_photo_event', function() {
+        $('#adding_img_event').submit();
+    });
+    $('#window_afisha').on('onload', '#hiddenframe1', function() {
+        alert('ok');
+        $('#add_photo_event').val('');
+        var photo = $('#hiddenframe1').contents().find('body').html();
+        $('#window_afisha .img img').attr('src', 'img/events/'+photo);
+        $('.del_photo').show();
+        $('#window_afisha #eventtestform-photo').val(photo);
     });
 });

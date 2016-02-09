@@ -10,6 +10,15 @@
 	src: url(../fonts/PT.ttf);
 	font-family: 'PT Serif';
 }
+@font-face {
+	font-family: 'Europe';
+	src: url('../fonts/Europe_Normal.eot');
+	src: url('../fonts/Europe_Normal.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/EuropeNormal.woff') format('woff'),
+		url('../fonts/EuropeNormal.svg#Europe_Normal') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 body {
 	margin: 0;
@@ -1232,14 +1241,15 @@ span.rev_ans {
 .main_top p.cat {
 	color: rgba(0, 0, 0, 0.5);
 	margin-top: 7px;
-	font: 11px 'PT Serif';
+	font: 11px 'Europe';
 	text-transform: uppercase;
 }
 .main_top h2 {
 	line-height: 1.0;
+	font: 20px 'Europe';
 }
 .main_top p.about {
-	font: 13px 'PT Serif';
+	font: 13px 'Europe';
 }
 .main_top .podcat_top {
 	padding: 0 0 10px;
@@ -1905,12 +1915,59 @@ h2.forum_zag a:hover {
     box-shadow: none;
     height: auto;
     padding: 3px 5px;
+	float: left;
+}
+#window_afisha #event_subcat {
+	margin-top: 10px;
 }
 #window_afisha #event_cat {
     float: left;
 }
 #window_afisha .form-group {
     margin-bottom: 0;
+}
+#eventtestform-date {
+	background: #f8f8f8;
+	border: 1px solid #ededed;
+	width: 30%;
+	border-radius: 0;
+	box-shadow: none;
+	height: auto;
+	padding: 3px 5px;
+	float: right;
+}
+#hiddenframe1 {
+	border: 0;
+	width: 30%;
+	overflow: hidden;
+}
+#window_afisha .img img {
+	cursor: pointer;
+}
+#ui-datepicker-div {
+	background: #525252;
+	min-width: 171px;
+}
+.ui-datepicker-calendar {
+	width: 100%;
+}
+.ui-datepicker-calendar td {
+	text-align: center;
+	padding: 2px 0;
+}
+.ui-datepicker-calendar td a {
+	color: #b7b7b7;
+}
+.ui-datepicker-calendar th {
+	color: #b7b7b7;
+	text-align: center;
+	font-size: 10px;
+}
+.ui-datepicker-title {
+	color: #b7b7b7;
+	float: left;
+	padding-left: 4px;
+
 }
 
 

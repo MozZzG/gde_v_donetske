@@ -11,12 +11,14 @@ use yii\widgets\LinkPager;
 
 $this->registerJsFile('js/news.js');
 
-$this->title = $partner ? 'Новости партнеров | Информационный портал где в Донецке?' : 'Новости города | Информационный портал где в Донецке?';
+$this->title = $partner ? 'Новости партнеров | Информационный портал где в Донецке?' : 'Жизнь города | Информационный портал где в Донецке?';
 ?>
 
 <div class="row white_cont">
-    <div class="col-sm-10">
-        <h2 class="text-center">Новости <?= $partner ? 'партнеров' : 'города' ?></h2>
+    <table>
+        <tr>
+    <td class="vert_top">
+        <h2 class="text-center"><?= $partner ? 'Новости партнеров' : 'Жизнь города' ?></h2>
         <?php
         if (!$partner) {
         ?>
@@ -82,10 +84,21 @@ $this->title = $partner ? 'Новости партнеров | Информац�
                 'nextPageLabel' => '<img src="img/page_r.png" alt="">',
             ]); ?>
         </div>
-    </div>
-    <div class="col-sm-2 right">
-        <div class="banner"><img src="img/banner1.jpg"></div>
-        <div class="banner"><img src="img/banner2.jpg"></div>
-    </div>
+    </td>
+    <td class="index_banner2 vert_top">
+        <div class="banner">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Новости партнеров -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-6504546679081073"
+                 data-ad-slot="2598183748"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </td>
+    </tr>
+    </table>
     <div class="clr"></div>
 </div>
