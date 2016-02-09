@@ -1817,7 +1817,7 @@ h2.forum_zag a:hover {
     outline: none;
     margin-top: 30px;
 }
-#est_edit button {
+#est_edit button, #window_afisha button {
     border: 1px solid #c8c8c8;
     margin-top: 7px;
     float: right;
@@ -1826,7 +1826,7 @@ h2.forum_zag a:hover {
     background: linear-gradient(to top, #e80b2c, #fb1f3f);
     padding-bottom: 4px;
 }
-#est_edit button[type=submit] {
+#est_edit button[type=submit], #window_afisha button[type=submit] {
     background: linear-gradient(to top, #211d22, #343135);
 }
 #est_edit .on_photo::-webkit-input-placeholder {
@@ -1880,6 +1880,8 @@ h2.forum_zag a:hover {
 
 #window_afisha .modal-content {
     border-radius: 0;
+    width: 750px;
+    min-height: 420px;
 }
 #window_afisha .img {
     float: left;
@@ -1907,7 +1909,7 @@ h2.forum_zag a:hover {
     height: auto;
     box-shadow: none;
 }
-#window_afisha select {
+#window_afisha select, #eventtestform-date {
     background: #f8f8f8;
     border: 1px solid #ededed;
     width: 30%;
@@ -1916,6 +1918,7 @@ h2.forum_zag a:hover {
     height: auto;
     padding: 3px 5px;
 	float: left;
+    outline: none;
 }
 #window_afisha #event_subcat {
 	margin-top: 10px;
@@ -1925,6 +1928,9 @@ h2.forum_zag a:hover {
 }
 #window_afisha .form-group {
     margin-bottom: 0;
+}
+#window_afisha .event_form_label {
+    width: 30%;
 }
 #eventtestform-date {
 	background: #f8f8f8;
@@ -1944,30 +1950,86 @@ h2.forum_zag a:hover {
 #window_afisha .img img {
 	cursor: pointer;
 }
+#window_afisha #del_photo_event {
+    color: #000;
+    font: 12px Arial;
+    margin-left: 42px;
+    display: none;
+}
+#window_afisha #del_photo_event:hover {
+    text-decoration: underline;
+}
+#window_afisha .event_note {
+    float: left;
+    color: rgba(55, 49, 53, 0.46);
+    text-align: center;
+    font: 13px Arial;
+    width: 30%;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+#window_afisha button {
+    float: left;
+    margin: 19px 0 0 50px;
+}
 #ui-datepicker-div {
 	background: #525252;
-	min-width: 171px;
+	width: 215px;
+    padding: 8px 10px;
 }
 .ui-datepicker-calendar {
 	width: 100%;
 }
 .ui-datepicker-calendar td {
 	text-align: center;
-	padding: 2px 0;
 }
 .ui-datepicker-calendar td a {
-	color: #b7b7b7;
+	color: #e3e3e3;
+    font: 13px Arial;
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+}
+.ui-datepicker-calendar td a:hover {
+    color: #fff;
+}
+.ui-datepicker-calendar td a.ui-state-highlight {
+    color: #fff;
+    background: #f64b64;
 }
 .ui-datepicker-calendar th {
-	color: #b7b7b7;
+	color: #e3e3e3;
 	text-align: center;
-	font-size: 10px;
+    font: 8px Arial;
+    padding: 8px 0;
 }
 .ui-datepicker-title {
-	color: #b7b7b7;
+	color: #e3e3e3;
 	float: left;
-	padding-left: 4px;
-
+	padding-left: 7px;
+    font: 12px Arial;
+}
+.ui-datepicker-next {
+    float: right;
+    margin-right: 6px;
+}
+.ui-datepicker-prev {
+    position: absolute;
+    margin-left: 143px;
+}
+.ui-icon-circle-triangle-w {
+    width: 17px;
+    height: 8px;
+    display: block;
+    background: url(../img/date_up.png) no-repeat;
+    cursor: pointer;
+ }
+.ui-icon-circle-triangle-e {
+    width: 17px;
+    height: 8px;
+    display: block;
+    background: url(../img/date_down.png) no-repeat;
+    cursor: pointer;
 }
 
 

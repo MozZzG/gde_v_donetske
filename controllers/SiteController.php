@@ -111,7 +111,7 @@ class SiteController extends Controller
         $db_forum = new Connection([
             'dsn' => 'mysql:host=localhost;dbname=forum',
             'username' => 'root',
-            'password' => '',
+            'password' => 'avram007700',
             'charset' => 'utf8',
         ]);
         $posts = $db_forum->createCommand('SELECT questions.ID, Caption, DateTime, categories.Name AS Cat, users.Name, LastName, Avatar FROM questions, categories, users WHERE questions.UserID=users.ID AND questions.CategoryID=categories.ID ORDER BY DateTime DESC LIMIT 14')
@@ -573,11 +573,11 @@ class SiteController extends Controller
         $ext = substr(basename($_FILES['photo_event']['name']), strrpos(basename($_FILES['photo_event']['name']), '.'));
         $name = $ev.$ext;
         $success = move_uploaded_file($_FILES['photo_event']['tmp_name'], 'img/events/'.$name);
-        echo '<img src="img/events/'.$name.'" width="100%" alt="">';
+        echo $name;
     }
 
     public function actionDelimgevent($photo) {
-        return unlink('img/establishments/'.$photo);
+        return unlink('img/events/'.$photo);
     }
 
     public function actionGeteventsubs($cat) {

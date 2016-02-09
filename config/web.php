@@ -35,6 +35,7 @@ $config = [
                 'del_img' => 'site/delestimg',
                 'add_est' => 'site/addest',
                 'add_img_event' => 'site/addimgevent',
+                'del_img_event' => 'site/delimgevent',
             ],
         ],
         'formatter' => [
@@ -76,7 +77,7 @@ $config = [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=forum',
             'username' => 'root',
-            'password' => '',
+            'password' => 'avram007700',
             'charset' => 'utf8',
         ],
     ],

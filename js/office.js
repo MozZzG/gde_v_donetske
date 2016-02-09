@@ -74,7 +74,8 @@ $(document).ready(function() {
             success: function(response){
                 if (response) {
                     $('#window_afisha .modal-body').html(response);
-                    $('#window_afisha').show();
+                    $('#window_afisha #eventtestform-date').attr('placeholder', 'выбрать дату');
+                    $('#window_afisha').fadeIn();
                     $('#window_afisha').addClass('in');
                 }
             }
@@ -98,12 +99,25 @@ $(document).ready(function() {
     $('#window_afisha').on('change', '#add_photo_event', function() {
         $('#adding_img_event').submit();
     });
-    $('#window_afisha').on('onload', '#hiddenframe1', function() {
-        alert('ok');
+    $('#hiddenframe1').load(function() {
         $('#add_photo_event').val('');
         var photo = $('#hiddenframe1').contents().find('body').html();
         $('#window_afisha .img img').attr('src', 'img/events/'+photo);
-        $('.del_photo').show();
+        $('#del_photo_event').show();
         $('#window_afisha #eventtestform-photo').val(photo);
+    });
+    $('#window_afisha').on('click', '#del_photo_event', function(e) {
+        e.preventDefault();
+        var photo = $('#eventtestform-photo').val();
+        $.ajax({
+            url: 'del_img_event?photo='+photo,
+            success: function(response){
+                if (response) {
+                    $('#window_afisha #eventtestform-photo').val('');
+                    $('#window_afisha .img img').attr('src', 'img/afisha_null.jpg');
+                    $('#del_photo_event').hide();
+                }
+            }
+        });
     });
 });

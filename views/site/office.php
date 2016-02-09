@@ -24,7 +24,8 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
             <input id="photo_num" name="photo_num" type="hidden" value="1">
             <input id="est_id" name="est_id" type="hidden" value="<?= $est->ID ?>">
         </form>
-        <iframe id="hiddenframe" name="hiddenframe" style="display: none"></iframe>
+        <iframe id="hiddenframe" name="hiddenframe" style="display: none;"></iframe>
+        <iframe id="hiddenframe1" name="hiddenframe1" style="display: none;"></iframe>
         <?php $form = ActiveForm::begin([
             'id' => 'est_edit',
             'fieldConfig' => [
