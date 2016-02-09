@@ -42,10 +42,10 @@ function resize_news() {
         if ($(this).height() > h) h = $(this).height();
     });
     $('.pn1 li a').each(function() {
-        $(this).height(h);        
+        $(this).height(h);
     });
     /*$h1 = $('.pn2 li').height();
-    alert($h);
+     alert($h);
     $('.pn2 li a').each(function() {
         $(this).height($h);
     });*/
@@ -70,7 +70,6 @@ function forum_resize(av, pw) {
 }
 
 $(document).ready(function() {
-    
     $('.city_news li').width(Math.floor($('.city_news').width() / 5));
     setTimeout(resize_news(), 100);
 
@@ -88,9 +87,9 @@ $(document).ready(function() {
             $w = $(this).width();
             var p_width = $(this).parent().find('.est_view').outerWidth();
             if ($(this).parent().find('.est_like').outerWidth() > p_width) p_width = $(this).parent().find('.est_like').outerWidth();
-            if ($(this).parent().find('.est_com').outerWidth() > p_width) p_width = $(this).parent().find('.est_com').outerWidth();     
+            if ($(this).parent().find('.est_com').outerWidth() > p_width) p_width = $(this).parent().find('.est_com').outerWidth();
 
-            var top = $h / 2 + $(this).parent().find('.est_view').height() / 2;            
+            var top = $h / 2 + $(this).parent().find('.est_view').height() / 2;
             $(this).parent().find('.est_view').css('marginTop', '-'+top+'px');
             $(this).parent().find('.est_like').css('marginTop', '-'+top+'px');
             $(this).parent().find('.est_com').css('marginTop', '-'+top+'px');

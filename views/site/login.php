@@ -16,9 +16,9 @@ $this->title = 'Вход/Регистрация | Информационный �
 
 <div class="row">
     <table>
-    <tr>
-    <td class="vert_top">
-        <div class="row">
+        <tr>
+            <td class="vert_top">
+                <div class="row">
             <div class="col-sm-4">
                 <h2 class="reg_title">Вход / Регистрация</h2>
                 <?php $form = ActiveForm::begin([
@@ -124,7 +124,7 @@ $this->title = 'Вход/Регистрация | Информационный �
                  data-ad-client="ca-pub-6504546679081073"
                  data-ad-slot="7390140141"></ins>
             <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
     </td>

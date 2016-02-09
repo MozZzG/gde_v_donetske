@@ -73,9 +73,9 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
         'db_forum' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=gdevdo00.mysql.ukraine.com.ua;dbname=gdevdo00_forum',
-            'username' => 'gdevdo00_forum',
-            'password' => 'faq5b34s',
+            'dsn' => 'mysql:host=localhost;dbname=forum',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ],
     ],

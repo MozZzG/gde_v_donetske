@@ -11,6 +11,7 @@ use yii\widgets\LinkPager;
 use yii\widgets\ActiveForm;
 $this->registerJsFile('js/bootstrap.min.js');
 $this->registerJsFile('js/establishment.js');
+$this->registerJsFile('js/office.js');
 
 $this->title = $est->Name.' | Информационный портал где в Донецке?';
 $rate = $est->Rating * 19 + floor($est->Rating) * 6;
@@ -140,7 +141,7 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
         <?= Html::submitButton('отправить на проверку') ?>
         <div class="clr"></div>
         <?php ActiveForm::end(); ?>
-<!--
+
         <h2 class="text-center">Афиши</h2>
         <div class="est_white">
             <ul class="afisha events">
@@ -162,11 +163,21 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
                 'prevPageLabel' => '<img src="img/page_l.png" alt="">',
                 'nextPageLabel' => '<img src="img/page_r.png" alt="">',
             ]); ?>
-        </div> -->
+        </div>
     </div>
     <div class="col-sm-2 right">
         <div class="banner"><img src="img/banner1.jpg"></div>
         <div class="banner"><img src="img/banner2.jpg"></div>
+    </div>
+</div>
+
+<div id="window_afisha" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+
+            </div>
+        </div>
     </div>
 </div>
 

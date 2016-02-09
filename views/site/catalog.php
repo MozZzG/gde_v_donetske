@@ -14,8 +14,8 @@ $this->registerJsFile('js/catalog.js');
 
 <div class="row">
     <table>
-    <tr>
-    <td class="vert_top">
+        <tr>
+            <td class="vert_top">
         <h2 class="text-center"><?= $subcategory->Name ?></h2>
         <!--
         <form id="podcat_filter" class="row">
@@ -51,32 +51,32 @@ $this->registerJsFile('js/catalog.js');
         <?php
         if ($more) echo '<a href="#" class="show_more" id="'.$subcategory->ID.'">показать еще</a>';
         ?>
-    </td>
-    <td class="vert_top index_banner">
-        <div class="banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Страница заведений небоскреб -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:600px"
-                 data-ad-client="ca-pub-6504546679081073"
-                 data-ad-slot="6693966142"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        <div class="banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Страница заведения маленький -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:250px"
-                 data-ad-client="ca-pub-6504546679081073"
-                 data-ad-slot="2124165745"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </td>
-    </tr>
+            </td>
+            <td class="vert_top index_banner">
+                <div class="banner">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Страница заведений небоскреб -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:600px"
+                         data-ad-client="ca-pub-6504546679081073"
+                         data-ad-slot="6693966142"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div class="banner">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Страница заведения маленький -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-6504546679081073"
+                         data-ad-slot="2124165745"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </td>
+        </tr>
     </table>
 </div>
 <div class="row news">
@@ -97,13 +97,13 @@ $this->registerJsFile('js/catalog.js');
     <div class="clr"></div>
     <div class="banner_big">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Подраздел горизонтальный -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:980px;height:120px"
-                 data-ad-client="ca-pub-6504546679081073"
-                 data-ad-slot="2879215343"></ins>
-            <script>
+        <!-- Подраздел горизонтальный -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:980px;height:120px"
+             data-ad-client="ca-pub-6504546679081073"
+             data-ad-slot="2879215343"></ins>
+        <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        </script>
     </div>
 </div>

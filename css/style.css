@@ -1037,7 +1037,7 @@ a.logout {
     transition: 0.8s;
 }
 .afisha.news li:hover {
-    
+
 }
 .afisha.news .new_caption {
     transition: 0.8s;
@@ -1337,7 +1337,7 @@ a.calendar_link {
 	margin-top: 7px;
 }
 .city_news a:hover {
-	/*background: rgba(0, 0, 0, 0.08);*/
+
 }
 .city_news a:hover h5 {
     color: #ffad50;
@@ -1422,7 +1422,7 @@ a.calendar_link {
 .city_news .new_img {
     overflow: hidden;
     width: 100%;
-    background: #000;
+	background: #000;
 }
 
 .tovar {
@@ -1552,10 +1552,10 @@ h2.forum_zag a:hover {
     column-count: 2;
     -webkit-column-count: 2;
     -moz-column-count: 2;
-    margin-top: 15px;
+	margin-top: 15px;
 }
 .last_quests li {
-    padding: 0 15px 30px;
+	padding: 0 15px 30px;
 }
 .last_quests li a {
     color: #000;
@@ -1850,8 +1850,6 @@ h2.forum_zag a:hover {
 	width: 302px;
 	padding-left: 15px;
 }
-.main_top_col {
-}
 .main_top {
 	margin-left: 0;
 	margin-right: 0;
@@ -1870,16 +1868,59 @@ h2.forum_zag a:hover {
 	padding-left: 15px;
 }
 
+#window_afisha .modal-content {
+    border-radius: 0;
+}
+#window_afisha .img {
+    float: left;
+    width: 30%;
+    margin-right: 15px;
+}
+#window_afisha .img img {
+    max-width: 100%;
+}
+#window_afisha table {
+    font: 15px Arial;
+    width: 67%;
+    margin-bottom: 20px;
+}
+#window_afisha table td {
+    padding-bottom: 10px;
+}
+#window_afisha table input {
+    background: #efefef;
+    border: 1px solid #e9e9e9;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 0;
+    height: auto;
+    box-shadow: none;
+}
+#window_afisha select {
+    background: #f8f8f8;
+    border: 1px solid #ededed;
+    width: 30%;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    padding: 3px 5px;
+}
+#window_afisha #event_cat {
+    float: left;
+}
+#window_afisha .form-group {
+    margin-bottom: 0;
+}
+
+
+
 
 
 
 
 
 @media (min-width: 1366px) {
-	/*.container {
-		width: 85%;
-	}
-	*/
 	header h1 {
 		font-size: 35px;
 	}
@@ -1887,8 +1928,8 @@ h2.forum_zag a:hover {
         height: 240px;
     }
     ul.menu {
-        width: 80%;
-        margin: 0 auto;
+		width: 80%;
+		margin: 0 auto;
     }
     #est_edit .stars_big {
         margin-top: -185px;
@@ -1899,18 +1940,6 @@ h2.forum_zag a:hover {
     ul.menu {
         width: 100%;
     }
-    /*.container {
-    	width: 1400px!important;
-    }
-    .part_news .city_news li {
-    	padding-right: 10px;
-    }
-    .part_news .city_news li a {
-    	padding: 7px;
-    }
-    .part_news .city_news {
-    	margin-left: 25px;
-    }*/
 }
 @media (min-width: 1500px) {
     #myCarousel {
@@ -1919,9 +1948,9 @@ h2.forum_zag a:hover {
     #photos .about {
         min-height: 95px;
     }
-    ul.menu {
-    	width: 100%!important;
-    }
+	ul.menu {
+		width: 100%!important;
+	}
 }
 @media (max-width: 1500px) {
 	#photos .about h1 {
@@ -1955,9 +1984,9 @@ h2.forum_zag a:hover {
 }
 @media (min-width: 1280px) {
 	ul.menu {
-        width: 80%;
-        margin: 0 auto;
-    }
+		width: 80%;
+		margin: 0 auto;
+	}
 }
 @media (max-width: 1280px) {
 	.container {

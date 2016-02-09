@@ -18,8 +18,8 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
 
 <div class="row">
     <table>
-    <tr>
-    <td class="vert_top">
+        <tr>
+            <td class="vert_top">
         <table class="establ_block">
             <tr>
                 <td class="photos_block">
@@ -316,21 +316,21 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
             </table>
         </div>
         -->
-    </td>
-    <td class="vert_top banner_col">
-        <div class="banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Внутри заведения -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:600px"
-                 data-ad-client="ca-pub-6504546679081073"
-                 data-ad-slot="2959940542"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </td>
-    </tr>
+            </td>
+            <td class="vert_top banner_col">
+                <div class="banner">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Внутри заведения -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:600px"
+                         data-ad-client="ca-pub-6504546679081073"
+                         data-ad-slot="2959940542"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </td>
+        </tr>
     </table>
 </div>
 

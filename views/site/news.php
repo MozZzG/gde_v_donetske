@@ -9,6 +9,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
+$this->registerJsFile('js/news.js');
+
 $this->title = $partner ? 'Новости партнеров | Информационный портал где в Донецке?' : 'Новости города | Информационный портал где в Донецке?';
 ?>
 

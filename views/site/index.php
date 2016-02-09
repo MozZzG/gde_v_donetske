@@ -11,8 +11,8 @@ $this->registerJsFile('js/index.js');
 </div>
 <div class="row">
     <table>
-    <tr>
-    <td class="main_top_col vert_top">
+        <tr>
+            <td class="main_top_col vert_top">
         <div class="row main_top">
             <div class="col-sm-4">
                 <div class="podcat_top">
@@ -61,7 +61,7 @@ $this->registerJsFile('js/index.js');
                         <?php foreach ($parties as $party) { ?>
                             <li><a href="establishment?id=<?= $party->EstablishmentID ?>"><img src="img/events/<?= $party->Photo ?>" alt=""></a></li>
                         <?php } ?>
-                    </ul>                    
+                    </ul>
                 </div>
                 <div class="afisha_index cinema">
                     <ul class="main_afisha">
@@ -80,19 +80,19 @@ $this->registerJsFile('js/index.js');
                 <a href="calendar" class="calendar_link">Подробный календарь<br>событий Донецка</a>
             </div>
         </div>
-    </td>
-    <td class="banner_col vert_top">
-        <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Главная станица блок 1 -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:300px;height:600px"
-             data-ad-client="ca-pub-6504546679081073"
-             data-ad-slot="2263766547"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script></div>
-    </td>
-    </tr>
+            </td>
+            <td class="banner_col vert_top">
+                <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Главная станица блок 1 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:600px"
+                         data-ad-client="ca-pub-6504546679081073"
+                         data-ad-slot="2263766547"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script></div>
+            </td>
+        </tr>
     </table>
 </div>
 <div class="row white_cont">
@@ -118,8 +118,8 @@ $this->registerJsFile('js/index.js');
 
 <div class="row forum_block">
     <table>
-    <tr>
-    <td class="vert_top">
+        <tr>
+            <td class="vert_top">
         <h2 class="forum_zag">Вопросы жителей города<a href="http://gdevdonetske.com/forum">задать вопрос</a></h2>
         <ul class="last_quests large">
             <?php
@@ -138,20 +138,20 @@ $this->registerJsFile('js/index.js');
             }
             ?>
         </ul>
-    </td>
-    <td class="index_banner2 vert_top">
-        <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Главная страница блок 2 -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:600px"
-                 data-ad-client="ca-pub-6504546679081073"
-                 data-ad-slot="3740499746"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </td>
-    </tr>
+            </td>
+            <td class="index_banner2 vert_top">
+                <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Главная страница блок 2 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:600px"
+                         data-ad-client="ca-pub-6504546679081073"
+                         data-ad-slot="3740499746"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </td>
+        </tr>
     </table>
 </div>
 
@@ -182,7 +182,7 @@ $this->registerJsFile('js/index.js');
              data-ad-client="ca-pub-6504546679081073"
              data-ad-slot="5217232946"></ins>
         <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
     <ul class="city_news pn2">

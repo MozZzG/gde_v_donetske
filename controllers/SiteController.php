@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\EsttestForm;
+use app\models\EventtestForm;
 use app\models\SignupbusinessmanForm;
 use app\models\SignupForm;
 use Yii;
@@ -108,9 +109,9 @@ class SiteController extends Controller
 
 
         $db_forum = new Connection([
-            'dsn' => 'mysql:host=gdevdo00.mysql.ukraine.com.ua;dbname=gdevdo00_forum',
-            'username' => 'gdevdo00_forum',
-            'password' => 'faq5b34s',
+            'dsn' => 'mysql:host=localhost;dbname=forum',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ]);
         $posts = $db_forum->createCommand('SELECT questions.ID, Caption, DateTime, categories.Name AS Cat, users.Name, LastName, Avatar FROM questions, categories, users WHERE questions.UserID=users.ID AND questions.CategoryID=categories.ID ORDER BY DateTime DESC LIMIT 14')
@@ -549,6 +550,31 @@ class SiteController extends Controller
             $this->redirect(Url::to(['establishment', 'id' => $est->ID]));
 
         }
+    }
+
+    public function actionEventedit($event, $est) {
+        $model = new EventtestForm();
+        $est = Establishment::find()->where(['ID' => $est])->one();
+        $cat = Categoryevent::find()->all();
+        $cats = ArrayHelper::map($cat, 'ID', 'Name');
+        if (!$event) {
+
+        }
+        return $this->renderPartial('event_form', [
+            'model' => $model,
+            'est' => $est,
+            'cats' => $cats,
+            'subcats' => ['' => ''],
+        ]);
+    }
+
+    public function actionGeteventsubs($cat) {
+        $cats = Subcategoryevent::find()->where(['CategoryeventID' => $cat])->all();
+        $res = '<option value="">подкатегория</option>';
+        foreach ($cats as $c) {
+            $res .= '<option value="'.$c->ID.'">'.$c->Name.'</option>';
+        }
+        return $res;
     }
 
     public function actionCalendar() {

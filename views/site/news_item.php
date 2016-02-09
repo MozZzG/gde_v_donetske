@@ -22,7 +22,7 @@ $this->registerJsFile('js/news.js');
                  data-ad-client="ca-pub-6504546679081073"
                  data-ad-slot="9146074942"></ins>
             <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
     </div>
@@ -39,7 +39,7 @@ $this->registerJsFile('js/news.js');
              data-ad-client="ca-pub-6504546679081073"
              data-ad-slot="6414764545"></ins>
         <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
 

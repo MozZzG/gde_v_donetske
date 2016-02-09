@@ -23,6 +23,7 @@ $(document).ready(function() {
             $('ul.menu li.active').css('marginBottom', $('ul.menu li.active ul').height() - 5 + 'px');
         }
     });
+
     var logo_width = $('header h1').outerWidth();
     var head_center = $('header .head_center').width();
     $('#search_form').width(head_center - logo_width - 10);

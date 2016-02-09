@@ -62,4 +62,12 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('body').on('click', '.calendar td.activity', function() {
+        var items = '';
+        $(this).find('ul li').each(function() {
+            items += '-'+$(this).attr('data-key');
+        });
+        document.location.href = 'calendar_day?items='+items;
+    });
 });
