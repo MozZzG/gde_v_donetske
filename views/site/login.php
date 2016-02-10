@@ -20,7 +20,7 @@ $this->title = 'Вход/Регистрация | Информационный �
         <tr>
             <td class="vert_top">
                 <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="width: 352px;">
                 <h2 class="reg_title">Вход / Регистрация</h2>
                 <?php $form = ActiveForm::begin([
                     'id' => 'sign_in',
@@ -64,7 +64,7 @@ $this->title = 'Вход/Регистрация | Информационный �
 
                 <?php ActiveForm::end(); ?>
             </div>
-            <div class="col-sm-8 sign_up_blocks">
+            <div class="col-sm-8 sign_up_blocks" style="width: 660px;">
                 <h2 class="reg_client"><a href="#" id="reg">для предпринимателей</a></h2>
                 <h2 class="reg_client active"><a href="#" id="reg1">для посетителей</a></h2>
                 <div class="clr"></div>

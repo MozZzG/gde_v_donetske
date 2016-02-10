@@ -20,7 +20,9 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
 ?>
 
 <div class="row">
-    <div class="col-sm-10">
+    <table>
+    <tr>
+    <td class="vert_top">
         <form enctype="multipart/form-data" action="add_img" method="post" name="add_img" id="adding_img" target="hiddenframe" style="display: none;">
             <input id="add_photo" name="photo" type="file">
             <input id="photo_num" name="photo_num" type="hidden" value="1">
@@ -167,11 +169,21 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
                 'nextPageLabel' => '<img src="img/page_r.png" alt="">',
             ]); ?>
         </div>
-    </div>
-    <div class="col-sm-2 right">
-        <div class="banner"><img src="img/banner1.jpg"></div>
-        <div class="banner"><img src="img/banner2.jpg"></div>
-    </div>
+    </td>
+    <td class="index_banner2 vert_top">
+        <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Личный кабинет -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-6504546679081073"
+                 data-ad-slot="7467205342"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </td>
+    </tr>
+    </table>
 </div>
 
 <div id="window_afisha" class="modal fade">

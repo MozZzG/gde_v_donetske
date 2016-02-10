@@ -31,7 +31,7 @@ $this->registerJsFile('js/catalog.js');
                 ?>
                 <div class="col-sm-4">
                     <a href="<?= Url::to(['establishment', 'id' => $est->ID]) ?>">
-                        <img src="img/establishments/<?= $est->Photo1 ?>" alt="">
+                        <div class="img"><img src="img/establishments/<?= $est->Photo1 ?>" alt=""></div>
                         <div class="stars_big"><div class="stars_full" style="width: <?= $rate ?>px;"></div></div>
                         <p class="cat"><?= $subcategory->Name ?></p>
                         <h2><?= $est->Name ?></h2>

@@ -2040,6 +2040,12 @@ h2.forum_zag a:hover {
     cursor: pointer;
 }
 
+.yandex_counter {
+	position: relative;
+	margin-top: -35px;
+	margin-left: 340px;
+}
+
 
 
 

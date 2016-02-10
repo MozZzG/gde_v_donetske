@@ -42,6 +42,15 @@ function resize_events() {
 
 $(document).ready(function() {
     //$('#myCarousel').carousel('pause');
+
+    $('#myCarousel').height($('.about_block').outerHeight());
+    setTimeout(function() {
+        $('#myCarousel').height($('.about_block').outerHeight());
+        $('#photos li img').each(function() {
+            $(this).height($('.about_block').height());
+        });
+    }, 100);
+    
     setTimeout(resize_news(), 100);
     setTimeout(resize_rec(), 100);
     setTimeout(resize_events(), 300);
