@@ -12,6 +12,8 @@ use yii\widgets\ActiveForm;
 $this->registerJsFile('js/bootstrap.min.js');
 $this->registerJsFile('js/establishment.js');
 $this->registerJsFile('js/office.js');
+$this->registerJsFile('js/jquery-ui.js');
+$this->registerJsFile('js/datepicker-ru.js');
 
 $this->title = $est->Name.' | Информационный портал где в Донецке?';
 $rate = $est->Rating * 19 + floor($est->Rating) * 6;
@@ -144,7 +146,7 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
         <?php ActiveForm::end(); ?>
 
         <h2 class="text-center">Афиши</h2>
-        <div class="est_white">
+        <div class="est_white test_events_block">
             <ul class="afisha events">
                 <?php
                     $i = 0;

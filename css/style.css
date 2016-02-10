@@ -1878,9 +1878,17 @@ h2.forum_zag a:hover {
 	padding-left: 15px;
 }
 
+.test_events_block {
+	margin-top: 15px;
+	padding-top: 25px;
+	padding-bottom: 5px;
+}
+#window_afisha .modal-dialog {
+	width: 750px;
+}
 #window_afisha .modal-content {
     border-radius: 0;
-    width: 750px;
+    width: 100%;
     min-height: 420px;
 }
 #window_afisha .img {
@@ -2094,9 +2102,9 @@ h2.forum_zag a:hover {
 	#photos .about {
 		font-size: 15px;
 	}
-	#photos .stars_big {
+	/*#photos .stars_big {
 		margin-top: -108px;
-	}
+	}*/
 	#photos a.prev, #photos a.next {
 		margin-top: -178px;
 	}

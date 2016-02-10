@@ -75,8 +75,7 @@ $(document).ready(function() {
                 if (response) {
                     $('#window_afisha .modal-body').html(response);
                     $('#window_afisha #eventtestform-date').attr('placeholder', 'выбрать дату');
-                    $('#window_afisha').fadeIn();
-                    $('#window_afisha').addClass('in');
+                    $('#window_afisha').modal('show');
                 }
             }
         });

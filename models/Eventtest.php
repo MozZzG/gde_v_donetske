@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "event".
+ * This is the model class for table "eventtest".
  *
  * @property integer $ID
  * @property string $Photo
@@ -18,19 +18,16 @@ use Yii;
  * @property integer $SubcategoryeventID
  * @property integer $EstablishmentID
  * @property integer $IndexTop
- * @property integer $New
- *
- * @property Categoryevent $categoryevent
- * @property Establishment $establishment
+ * @property integer $EventID
  */
-class Event extends \yii\db\ActiveRecord
+class Eventtest extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'event';
+        return 'eventtest';
     }
 
     /**
@@ -39,13 +36,13 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Photo', 'Date', 'Name', 'CategoryeventID'], 'required'],
+            [['CategoryeventID'], 'required'],
             [['Photo', 'Name', 'Place', 'Contacts'], 'string'],
             [['Date'], 'safe'],
-            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'integer'],
+            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'EventID'], 'integer'],
             [['Time'], 'string', 'max' => 50],
-            [['Place', 'Contacts', 'Time'], 'default', 'value' => ''],
-            [['SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'default', 'value' => 0],
+            [['Photo', 'Name', 'Place', 'Contacts', 'Time'], 'default', 'value' => ''],
+            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop'], 'default', 'value' => 0],
         ];
     }
 
@@ -60,12 +57,13 @@ class Event extends \yii\db\ActiveRecord
             'Date' => 'Дата',
             'Name' => 'Название',
             'Place' => 'Место проведения',
-            'Time' => 'Время начала',
+            'Time' => 'Начало',
             'Contacts' => 'Контакты',
             'CategoryeventID' => 'Категория',
             'SubcategoryeventID' => 'Подкатегория',
-            'EstablishmentID' => 'Заведение',
-            'IndexTop' => 'Топ на главной',
+            'EstablishmentID' => 'Establishment ID',
+            'IndexTop' => 'Index Top',
+            'EventID' => 'Event ID',
         ];
     }
 
@@ -83,5 +81,13 @@ class Event extends \yii\db\ActiveRecord
     public function getEstablishment()
     {
         return $this->hasOne(Establishment::className(), ['ID' => 'EstablishmentID']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEvent()
+    {
+        return $this->hasOne(Event::className(), ['ID' => 'EventID']);
     }
 }

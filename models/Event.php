@@ -18,6 +18,7 @@ use Yii;
  * @property integer $SubcategoryeventID
  * @property integer $EstablishmentID
  * @property integer $IndexTop
+ * @property integer $New
  *
  * @property Categoryevent $categoryevent
  * @property Establishment $establishment
@@ -38,13 +39,12 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Photo', 'Date', 'Name', 'CategoryeventID'], 'required'],
             [['Photo', 'Name', 'Place', 'Contacts'], 'string'],
             [['Date'], 'safe'],
-            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop'], 'integer'],
+            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'integer'],
             [['Time'], 'string', 'max' => 50],
             [['Photo', 'Name', 'Place', 'Contacts', 'Time'], 'default', 'value' => ''],
-            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop'], 'default', 'value' => 0],
+            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'default', 'value' => 0],
         ];
     }
 

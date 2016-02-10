@@ -7,6 +7,7 @@ use app\models\EventtestForm;
 use app\models\SignupbusinessmanForm;
 use app\models\SignupForm;
 use Yii;
+use yii\base\View;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -92,16 +93,16 @@ class SiteController extends Controller
 
         $cinemas = Event::find()
             ->where(['IndexTop' => 1])
-            ->andWhere(['CategoryeventID' => 3])
+            ->andWhere(['CategoryeventID' => 3, 'New' => 0])
             ->limit(2)
             ->all();
         $theatres = Event::find()
             ->where(['IndexTop' => 1])
-            ->andWhere(['CategoryeventID' => 4])
+            ->andWhere(['CategoryeventID' => 4, 'New' => 0])
             ->limit(2)
             ->all();
         $parties = Event::find()
-            ->where(['IndexTop' => 1])
+            ->where(['IndexTop' => 1, 'New' => 0])
             ->andWhere(['not', ['CategoryeventID' => 3]])
             ->andWhere(['not', ['CategoryeventID' => 4]])
             ->limit(2)
@@ -111,7 +112,7 @@ class SiteController extends Controller
         $db_forum = new Connection([
             'dsn' => 'mysql:host=localhost;dbname=forum',
             'username' => 'root',
-            'password' => 'avram007700',
+            'password' => '',
             'charset' => 'utf8',
         ]);
         $posts = $db_forum->createCommand('SELECT questions.ID, Caption, DateTime, categories.Name AS Cat, users.Name, LastName, Avatar FROM questions, categories, users WHERE questions.UserID=users.ID AND questions.CategoryID=categories.ID ORDER BY DateTime DESC LIMIT 14')
@@ -241,14 +242,13 @@ class SiteController extends Controller
             $model->Photo9 = $est->Photo9;
             $model->Photo10 = $est->Photo10;
 
-            $query_events = Event::find()->where(['EstablishmentID' => $est->ID]);
+            $query_events = Event::find()->where(['EstablishmentID' => $est->ID, 'New' => 0]);
             $pages_events = new Pagination(['totalCount' => $query_events->count()+1, 'pageSize' => 5]);
             $events = $query_events->offset($pages_events->offset)->limit($pages_events->limit)->all();
 
             if ($model->load(Yii::$app->request->post()) && $model->Sendtoadmins($est->ID, $est->SubcategoryID)) {
                 return $this->render('office_sended_est');
             }
-
 
             return $this->render('office', [
                 'est' => $est,
@@ -479,7 +479,7 @@ class SiteController extends Controller
         $query_news = Newspartner::find()->where(['EstablishmentID' => $est->ID]);
         $pages_news = new Pagination(['totalCount' => $query_news->count(), 'pageSize' => 5]);
         $news = $query_news->offset($pages_news->offset)->limit($pages_news->limit)->all();
-        $query_events = Event::find()->where(['EstablishmentID' => $est->ID]);
+        $query_events = Event::find()->where(['EstablishmentID' => $est->ID, 'New' => 0]);
         $pages_events = new Pagination(['totalCount' => $query_events->count(), 'pageSize' => 5]);
         $events = $query_events->offset($pages_events->offset)->limit($pages_events->limit)->all();
 
@@ -501,7 +501,7 @@ class SiteController extends Controller
         /*$query_news = Newspartner::find()->where(['EstablishmentID' => $est->ID]);
         $pages_news = new Pagination(['totalCount' => $query_news->count(), 'pageSize' => 5]);
         $news = $query_news->offset($pages_news->offset)->limit($pages_news->limit)->all();
-        */$query_events = Event::find()->where(['EstablishmentID' => $est->ID]);
+        */$query_events = Event::find()->where(['EstablishmentID' => $est->ID, 'New' => 0]);
         $pages_events = new Pagination(['totalCount' => $query_events->count(), 'pageSize' => 5]);
         $events = $query_events->offset($pages_events->offset)->limit($pages_events->limit)->all();
 
@@ -557,15 +557,40 @@ class SiteController extends Controller
         $est = Establishment::find()->where(['ID' => $est])->one();
         $cat = Categoryevent::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
-        if (!$event) {
-
+        if ($event) {
+            $ev = Event::find()->where(['ID' => $event, 'New' => 1])->one();
+            $model->Photo = $ev->Photo;
+            $model->Name = $ev->Name;
+            $model->Date = $ev->Date;
+            $model->Place = $ev->Place;
+            $model->Time = $ev->Time;
+            $model->Contacts = $ev->Contacts;
+            $model->CategoryeventID = $ev->CategoryeventID;
+            $model->SubcategoryeventID = $ev->SubcategoryeventID;
+            $model->EstablishmentID = $ev->EstablishmentID;
+            $model->EventID = $ev->ID;
+        }
+        else {
+            $ev = new Event();
+            $ev->New = 1;
+            $ev->save();
+            $event = $ev->ID;
         }
         return $this->renderPartial('event_form', [
             'model' => $model,
             'est' => $est,
             'cats' => $cats,
+            'event' => $event,
             'subcats' => ['' => ''],
         ]);
+    }
+
+    public function actionTestevent() {
+        $model = new EventtestForm();
+        if ($model->load(Yii::$app->request->post()) && $model->Sendtoadmins()) {
+            return $this->render('office_sended_est');
+        }
+        return false;
     }
 
     public function actionAddimgevent() {
@@ -599,7 +624,7 @@ class SiteController extends Controller
             if ($cat != null) {
                 $c = Categoryevent::find()->where(['ID' => $cat])->one();
                 $cats = Subcategoryevent::find()->where(['CategoryeventID' => $cat])->all();
-                $query = Event::find()->where(['CategoryeventID' => $cat]);
+                $query = Event::find()->where(['CategoryeventID' => $cat, 'New' => 0]);
                 $dataProvider = new ActiveDataProvider([
                     'query' => $query,
                     'pagination' => ['pageSize' => 30],
@@ -617,7 +642,7 @@ class SiteController extends Controller
                 $s = Subcategoryevent::find()->where(['ID' => $subcat])->one();
                 $c = Categoryevent::find()->where(['ID' => $s->CategoryeventID])->one();
                 $cats = Subcategoryevent::find()->where(['CategoryeventID' => $c->ID])->all();
-                $query = Event::find()->where(['SubcategoryeventID' => $s->ID]);
+                $query = Event::find()->where(['SubcategoryeventID' => $s->ID, 'New' => 0]);
                 $dataProvider = new ActiveDataProvider([
                     'query' => $query,
                     'pagination' => ['pageSize' => 30],
@@ -634,7 +659,7 @@ class SiteController extends Controller
                 ]);
             }
 
-            $query = Event::find();
+            $query = Event::find()->where(['New' => 0]);
             $dataProvider = new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => ['pageSize' => 30]
@@ -650,7 +675,7 @@ class SiteController extends Controller
             ]);
         }
 
-        $query = Event::find();
+        $query = Event::find()->where(['New' => 0]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => ['pageSize' => 30]
@@ -668,7 +693,7 @@ class SiteController extends Controller
 
     public function actionCalendarday($items) {
         $items = explode('-', $items);
-        $events = Event::find();
+        $events = Event::find()->where(['New' => 0]);
         foreach ($items as $item) {
             $events->orWhere(['ID' => $item]);
         }
