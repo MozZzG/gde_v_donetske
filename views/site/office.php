@@ -139,7 +139,7 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
                 </td>
             </tr>
         </table>
-        <button id="read">ознакомьтесь с условиями заполнения!</button>
+        <!--<button id="read">ознакомьтесь с условиями заполнения!</button>-->
         <div class="clr"></div>
         <?= Html::submitButton('отправить на проверку') ?>
         <div class="clr"></div>

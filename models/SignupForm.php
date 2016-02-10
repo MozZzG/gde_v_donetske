@@ -114,7 +114,7 @@ class SignupForm extends Model
             $model->NewID = 0;
             $model->Businessman = 0;
             if ($this->phone) {
-                $model->Phone = $this->activation_code;
+                $model->Phone = $this->phone;
             }
             else {
                 $model->Phone = '';

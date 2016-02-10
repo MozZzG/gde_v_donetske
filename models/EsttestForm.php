@@ -104,7 +104,7 @@ class EsttestForm extends Model
             $est_test->Photo9 = $this->Photo9;
             $est_test->Photo10 = $this->Photo10;
             if ($est_test->save()) {
-                mail('komarovats93@gmail.com', $est_test->Name.' отправлено на проверку', 'Заведение "'.$est_test->Name.'" было отправлено на проверку. Посмотреть новый вариант можно здесь: http://gdevonetske.com/establishment_test?id='.$est_test->ID);
+                mail('komarovats93@gmail.com', $est_test->Name.' отправлено на проверку', 'Заведение "'.$est_test->Name.'" было отправлено на проверку. Посмотреть новый вариант можно здесь: http://gdevdonetske.com/establishment_test?id='.$est_test->ID);
                 return true;
             }
         }

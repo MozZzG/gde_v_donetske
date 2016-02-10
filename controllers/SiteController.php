@@ -209,7 +209,7 @@ class SiteController extends Controller
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
         if ($model_reg->load(Yii::$app->request->post()) && $model_reg->signup()) {
             $us = Users::find()->where(['Email' => $model_reg->email])->one();
-            mail($us->Email, 'Подтверждение регистрации | Информационный портал где в Донецке?', 'Для завершения регистрации перейдите по ссылке: http://gdevdonetske.com/new_site/confirm?id='.$us->ID);
+            //mail($us->Email, 'Подтверждение регистрации | Информационный портал где в Донецке?', 'Для завершения регистрации перейдите по ссылке: http://gdevdonetske.com/confirm?id='.$us->ID);
             return $this->actionSignupaccess();
         }
         return $this->render('login', [
@@ -310,6 +310,7 @@ class SiteController extends Controller
         $us->save();
 
         $model = new LoginForm();
+        $model_login_bus = new LoginbusinessmanForm();
         $model_reg = new SignupForm();
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
@@ -317,6 +318,7 @@ class SiteController extends Controller
 
         return $this->render('confirm_access', [
             'model' => $model,
+            'model_login_bus' => $model_login_bus,
             'model_reg' => $model_reg,
             'model_bus' => $model_bus,
             'cats' => $cats,
@@ -326,6 +328,7 @@ class SiteController extends Controller
 
     public function actionSignupaccess() {
         $model = new LoginForm();
+        $model_login_bus = new LoginbusinessmanForm();
         $model_reg = new SignupForm();
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
@@ -333,6 +336,7 @@ class SiteController extends Controller
 
         return $this->render('reg_access', [
             'model' => $model,
+            'model_login_bus' => $model_login_bus,
             'model_reg' => $model_reg,
             'model_bus' => $model_bus,
             'cats' => $cats,
@@ -578,7 +582,7 @@ class SiteController extends Controller
         if ($est->save()) {
             $test->delete();
             $user = Users::find()->where(['ID' => $est->UserID])->one();
-            //mail($user->Email, $est->Name.' прошло проверку', 'Ваше заведение "'.$est_test->Name.'" было опубликовано на сайте "Где в Донецке..?": http://gdevonetske.com/establishment?id='.$est->ID.' Благодарим за сотрудничество!');
+            //mail($user->Email, $est->Name.' прошло проверку', 'Ваше заведение "'.$est->Name.'" было опубликовано на сайте "Где в Донецке..?": http://gdevdonetske.com/establishment?id='.$est->ID.' Благодарим за сотрудничество!');
             $this->redirect(Url::to(['establishment', 'id' => $est->ID]));
 
         }
