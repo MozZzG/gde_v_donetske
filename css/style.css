@@ -589,12 +589,12 @@ footer .fb:hover {
 #window_soglas .modal-dialog {
     width: 80%;
 }
-#window_reg .modal-content, #window_soglas .modal-content {
+#window_reg .modal-content, #window_soglas .modal-content, #window_phone_error .modal-content {
     border-radius: 0;
     font-size: 23px;
     text-align: center;
 }
-#window_reg .modal-body, #window_soglas .modal-body {
+#window_reg .modal-body, #window_soglas .modal-body, #window_phone_error .modal-body {
     font-size: 23px;
     padding: 0 15px 10px;
     max-height: 400px;
@@ -613,14 +613,14 @@ footer .fb:hover {
     border-top: 0!important;
     padding: 10px;
 }
-#window_reg .modal-header, #window_soglas .modal-header {
+#window_reg .modal-header, #window_soglas .modal-header, #window_phone_error .modal-header {
     border-bottom: 0!important;
     padding: 5px;
 }
-#window_reg .modal-header button, #window_soglas .modal-header button {
+#window_reg .modal-header button, #window_soglas .modal-header button, #window_phone_error .modal-header button {
     padding: 10px 10px 0 0;
 }
-#window_reg .modal-title, #window_soglas .modal-title {
+#window_reg .modal-title, #window_soglas .modal-title, #window_phone_error .modal-title {
     font-size: 41px;
     display: inline-block;
     height: 60px;
@@ -655,10 +655,10 @@ footer .fb:hover {
 	font-size: 15px;
 	margin-top: 413px;
 }
-#remember, #accept {
+#remember, #accept, #remember_bus {
 	display: none;
 }
-#remember + label span {
+#remember + label span, #remember_bus + label span {
 	display: inline-block;
     width: 23px;
     height: 22px;
@@ -668,7 +668,7 @@ footer .fb:hover {
     padding-left: 35px;
     margin-bottom: 15px;
 }
-#remember:checked + label span {
+#remember:checked + label span, #remember_bus:checked + label span {
 	background: url(../img/cb_remember_check.png) left top no-repeat;
 }
 #accept + label {

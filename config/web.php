@@ -37,6 +37,7 @@ $config = [
                 'add_img_event' => 'site/addimgevent',
                 'del_img_event' => 'site/delimgevent',
                 'test_event' => 'site/testevent',
+                'login_bus' => 'site/loginbus',
             ],
         ],
         'formatter' => [

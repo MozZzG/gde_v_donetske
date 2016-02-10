@@ -40,6 +40,7 @@ class SignupbusinessmanForm extends Model
             ['email', 'email'],
             ['email', 'validateUniq'],
             ['phone', 'string', 'max' => 12],
+            ['phone', 'validatePhoneUniq'],
             [['activation_code', 'est_name'], 'string'],
             [['category', 'subcategory', 'accept'], 'integer'],
             ['user_activation_code', 'validateCode', 'skipOnEmpty' => false, 'skipOnError' => false],
@@ -69,6 +70,17 @@ class SignupbusinessmanForm extends Model
 
             if ($user) {
                 $this->addError($attribute, 'Пользователь с таким email уже существует.');
+            }
+        }
+    }
+
+    public function validatePhoneUniq($attribute, $params)
+    {
+        if (!$this->hasErrors()) {
+            $user = Users::find()->where(['Phone' => $this->phone])->one();
+
+            if ($user) {
+                $this->addError($attribute, 'Пользователь с таким номером телефона уже существует.');
             }
         }
     }

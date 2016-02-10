@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\EsttestForm;
 use app\models\EventtestForm;
+use app\models\LoginbusinessmanForm;
 use app\models\SignupbusinessmanForm;
 use app\models\SignupForm;
 use Yii;
@@ -143,6 +144,7 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
+        $model_login_bus = new LoginbusinessmanForm();
         $model_reg = new SignupForm();
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
@@ -154,6 +156,32 @@ class SiteController extends Controller
             'model' => $model,
             'model_reg' => $model_reg,
             'model_bus' => $model_bus,
+            'model_login_bus' => $model_login_bus,
+            'cats' => $cats,
+            'subcats' => ['' => ''],
+        ]);
+    }
+
+    public function actionLoginbus()
+    {
+        if (!\Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        $model_login_bus = new LoginbusinessmanForm();
+        $model_reg = new SignupForm();
+        $model_bus = new SignupbusinessmanForm();
+        $cat = Category::find()->all();
+        $cats = ArrayHelper::map($cat, 'ID', 'Name');
+        if ($model_login_bus->load(Yii::$app->request->post()) && $model_login_bus->login()) {
+            return $this->goBack();
+        }
+        return $this->render('login', [
+            'model' => $model,
+            'model_reg' => $model_reg,
+            'model_bus' => $model_bus,
+            'model_login_bus' => $model_login_bus,
             'cats' => $cats,
             'subcats' => ['' => ''],
         ]);
@@ -175,6 +203,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         $model_reg = new SignupForm();
+        $model_login_bus = new LoginbusinessmanForm();
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
@@ -187,6 +216,7 @@ class SiteController extends Controller
             'model' => $model,
             'model_reg' => $model_reg,
             'model_bus' => $model_bus,
+            'model_login_bus' => $model_login_bus,
             'cats' => $cats,
             'subcats' => ['' => ''],
         ]);
@@ -198,6 +228,7 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
+        $model_login_bus = new LoginbusinessmanForm();
         $model_reg = new SignupForm();
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
@@ -209,6 +240,7 @@ class SiteController extends Controller
             'model' => $model,
             'model_reg' => $model_reg,
             'model_bus' => $model_bus,
+            'model_login_bus' => $model_login_bus,
             'cats' => $cats,
             'subcats' => ['' => ''],
         ]);

@@ -7,6 +7,14 @@ $(document).ready(function() {
             $(this).val(1);
         }
     });
+    $('body').on('click', '#remember_bus', function() {
+        if ($(this).val() == 1) {
+            $(this).val(0);
+        }
+        else {
+            $(this).val(1);
+        }
+    });
     $('body').on('click', '#accept', function() {
         if ($(this).val() == 1) {
             $(this).val(0);
@@ -20,18 +28,22 @@ $(document).ready(function() {
         e.preventDefault();
         $('#sign_up_user').hide();
         $('#soc_block').hide();
+        $('#sign_in').hide();
         $('#reg1').parent().removeClass('active');
         $(this).parent().addClass('active');
         $('#sign_up').show();
+        $('#sign_in_businessman').show();
         $('.call_to_manager').show();
     });
     $('#reg1').click(function(e) {
         e.preventDefault();
         $('#sign_up').hide();
+        $('#sign_in_businessman').hide();
         $('#reg').parent().removeClass('active');
         $(this).parent().addClass('active');
         $('.call_to_manager').hide();
         $('#sign_up_user').show();
+        $('#sign_in').show();
         $('#soc_block').show();
     });
 
@@ -52,7 +64,7 @@ $(document).ready(function() {
             but.html('отправлено');
         }
         else {
-            alert('Неверный формат номера');
+            $('#window_phone_error').modal('show');
         }
     });
 
@@ -73,7 +85,7 @@ $(document).ready(function() {
             but.html('отправлено');
         }
         else {
-            alert('Неверный формат номера');
+            $('#window_phone_error').modal('show');
         }
     });
 
