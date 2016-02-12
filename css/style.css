@@ -11,15 +11,6 @@
 	font-family: 'PT Serif';
 }
 @font-face {
-	font-family: 'Europe';
-	src: url('../fonts/Europe_Normal.eot');
-	src: url('../fonts/Europe_Normal.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/EuropeNormal.woff') format('woff'),
-		url('../fonts/EuropeNormal.svg#Europe_Normal') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
 	font-family: 'Helios';
 	src: url('../fonts/HeliosCondRegular.ttf');
 	url('../fonts/HeliosCondRegular.woff') format('woff'),

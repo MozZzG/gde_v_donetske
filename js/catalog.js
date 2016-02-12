@@ -55,7 +55,7 @@ $(document).ready(function() {
         });
         k = $('.podcat li').length;
         $.ajax({
-            url: 'site/catalogshowmore?id='+id+'&k='+k,
+            url: 'catalog/catalogshowmore?id='+id+'&k='+k,
             success: function(response){
                 if (!response) {
                     $('a.show_more').hide();

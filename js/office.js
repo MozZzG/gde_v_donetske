@@ -70,7 +70,7 @@ $(document).ready(function() {
         var event = $(this).attr('data-key');
         var est = $('#est_id').val();
         $.ajax({
-            url: 'site/eventedit?event='+event+'&est='+est,
+            url: 'office/eventedit?event='+event+'&est='+est,
             success: function(response){
                 if (response) {
                     $('#window_afisha .modal-body').html(response);
@@ -104,7 +104,7 @@ $(document).ready(function() {
 
     $('body').on('change', '#event_cat', function() {
         $.ajax({
-            url: 'site/geteventsubs?cat='+$(this).val(),
+            url: 'office/geteventsubs?cat='+$(this).val(),
             success: function(response){
                 if (response) {
                     $('#event_subcat').html(response);

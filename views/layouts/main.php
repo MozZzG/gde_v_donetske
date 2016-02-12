@@ -62,7 +62,7 @@ $this->registerLinkTag([
                         echo '<li><a href="#" class="nolink">'.$item->Name.'</a>';
                             echo '<ul>';
                             foreach ($submenu as $subitem) {
-                                echo '<li><a href="'.Url::to(['catalog', 'id' => $subitem->ID]).'">'.$subitem->Name.'</a></li>';
+                                echo '<li><a href="catalog?id='.$subitem->ID.'">'.$subitem->Name.'</a></li>';
                             }
                             echo '</ul>';
                         echo '</li>';
@@ -91,7 +91,7 @@ $this->registerLinkTag([
     </ul>
     <p class="site">
         <a href="http://gdevdonetske.com" target="_blank">Gdevdonetske.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <?= Html::a(Yii::$app->user->isGuest ? 'вход в личный кабинет' : (((strpos(Yii::$app->controller->route, 'office')) || (!$u->Businessman)) ? 'выход' : 'вход в личный кабинет'), Yii::$app->user->isGuest ? 'login' : (((strpos(Yii::$app->controller->route, 'office')) || (!$u->Businessman)) ? 'logout' : 'office'), ['class' => 'acc_link'])?>
+        <?= Html::a(Yii::$app->user->isGuest ? 'вход в личный кабинет' : (((strpos(Yii::$app->controller->route, '/office')) || (!$u->Businessman)) ? 'выход' : 'вход в личный кабинет'), Yii::$app->user->isGuest ? 'login' : (((strpos(Yii::$app->controller->route, '/office')) || (!$u->Businessman)) ? 'logout' : 'office'), ['class' => 'acc_link'])?>
     </p>
     <p class="copy">© 2013 - 2016 Где в Донецке...?</p>
     <p class="copy2">Copyright: Ali Sayed. All Rights Reserved.</p>
