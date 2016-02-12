@@ -1531,7 +1531,7 @@ h1.news_zag {
     text-align: justify;
     padding-top: 15px;
 }
-.news_item_block p img {
+.news_item_block .big_news_img {
 	max-width: 1075px;
 	margin-left: -60px!important;
 }

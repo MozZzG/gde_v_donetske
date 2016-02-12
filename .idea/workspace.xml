@@ -22,75 +22,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65592974">
-              <caret line="1569" column="25" selection-start-line="1569" selection-start-column="25" selection-end-line="1569" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/site/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.73077">
-              <caret line="53" column="98" selection-start-line="53" selection-start-column="98" selection-end-line="53" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.072727">
+            <state vertical-scroll-proportion="-0.48901904">
               <caret line="250" column="32" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="32" />
               <folding>
                 <element signature="e#35#62#0#PHP" expanded="true" />
                 <marker date="1455271210065" expanded="true" signature="3395:3624" placeholder="SELECT quest... questions" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="office.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/site/office.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.307693">
-              <caret line="249" column="40" selection-start-line="249" selection-start-column="40" selection-end-line="249" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="office.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/office.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="152" column="51" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="event_form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/site/event_form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.615385">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +72,6 @@
         <option value="$PROJECT_DIR$/views/site/_catalog.php" />
         <option value="$PROJECT_DIR$/js/establishment.js" />
         <option value="$PROJECT_DIR$/models/EsttestForm.php" />
-        <option value="$PROJECT_DIR$/views/site/news_item.php" />
         <option value="$PROJECT_DIR$/admin/controllers/NewspartnerController.php" />
         <option value="$PROJECT_DIR$/admin/models/NewspartnerForm.php" />
         <option value="$PROJECT_DIR$/admin/controllers/NewsController.php" />
@@ -155,6 +94,7 @@
         <option value="$PROJECT_DIR$/views/site/office.php" />
         <option value="$PROJECT_DIR$/js/office.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/views/site/news_item.php" />
       </list>
     </option>
   </component>
@@ -577,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/news_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45926967">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/establishment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.299458">
@@ -803,17 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.072727">
-          <caret line="250" column="32" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="32" />
-          <folding>
-            <element signature="e#35#62#0#PHP" expanded="true" />
-            <marker date="1455271210065" expanded="true" signature="3395:3624" placeholder="SELECT quest... questions" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/site/office.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.307693">
@@ -830,11 +752,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/news_item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9522472">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65592974">
-          <caret line="1569" column="25" selection-start-line="1569" selection-start-column="25" selection-end-line="1569" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.5065886">
+          <caret line="1536" column="1" selection-start-line="1536" selection-start-column="1" selection-end-line="1536" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.48901904">
+          <caret line="250" column="32" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="32" />
+          <folding>
+            <element signature="e#35#62#0#PHP" expanded="true" />
+            <marker date="1455271210065" expanded="true" signature="3395:3624" placeholder="SELECT quest... questions" />
+          </folding>
         </state>
       </provider>
     </entry>

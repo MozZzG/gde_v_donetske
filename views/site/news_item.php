@@ -62,3 +62,14 @@ $this->registerJsFile('js/news.js');
     </ul>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('p').each(function() {
+            if ($(this).find('img').css('float') != 'left') {
+                $(this).find('img').addClass('big_news_img');
+            }
+        });
+
+    });
+</script>
+
