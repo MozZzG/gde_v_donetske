@@ -137,6 +137,7 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
                     <div id="map" class="live_block">
                         <a href="http://www.google.com/maps" target="_blank">http://www.google.com/maps</a>
                         <?= $form->field($model, 'Map')->textInput(['class' => 'video'])->label(false) ?>
+                        <p>1. Перейти по ссылке<br>2. Ввести адрес вашего заведения<br>3. Нажать поделиться<br>4. Скопировать <strong>КОД</strong> и вставить в поле</p>
                     </div>
                 </td>
             </tr>
@@ -170,7 +171,7 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
             ]); ?>
         </div>
     </td>
-    <td class="index_banner2 vert_top">
+    <td class="banner_col vert_top">
         <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- Личный кабинет -->
             <ins class="adsbygoogle"

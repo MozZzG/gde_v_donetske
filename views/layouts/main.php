@@ -28,6 +28,7 @@ $this->registerLinkTag([
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
+    <meta name="robots" content="noindex,nofollow">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -86,7 +87,7 @@ $this->registerLinkTag([
         <li><a href="https://plus.google.com/+GdevDonetske" class="gp" target="_blank"></a></li>
         <li><a href="https://www.youtube.com/channel/UC81s33D-RehZec9RG2hr0zg" class="yt" target="_blank"></a></li>
         <li><a href="mailto:gdevdonetske@mail.ru" class="mail" target="_blank"></a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=100002094017082" class="fb" target="_blank"></a></li>
+        <li><a href="https://www.facebook.com/GdevDonetskecom/" class="fb" target="_blank"></a></li>
     </ul>
     <p class="site">
         <a href="http://gdevdonetske.com" target="_blank">Gdevdonetske.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

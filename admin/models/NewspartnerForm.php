@@ -29,7 +29,7 @@ class NewspartnerForm extends Model
             [['text', 'date'], 'string'],
             [['est', 'grey'], 'integer'],
             [['name', 'about'], 'string', 'max' => 200],
-            [['file1'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'checkExtensionByMimeType' => false],
+            [['file1'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'checkExtensionByMimeType' => false],
         ];
     }
 

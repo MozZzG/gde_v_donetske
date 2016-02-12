@@ -40,7 +40,7 @@ class NewsController extends Controller
             ],
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => 'http://gdevdonetske.com/new_site/img/news/content/', // Directory URL address, where files are stored.
+                'url' => 'http://gdevdonetske.com/img/news/content/', // Directory URL address, where files are stored.
                 'path' => '../../img/news/content/' // Or absolute path to directory where files are stored.
             ],
         ];
@@ -99,8 +99,8 @@ class NewsController extends Controller
                 $item->Grey = $model->grey;
                 if ($model->file1)
                     $item->Photo = $this->translite($model->name) .'.' . $model->file1->extension;
-                else
-                    $item->Photo = '';
+                /*else
+                    $item->Photo = '';*/
                 if ($item->validate()) {
                     $item->save();
                     return $this->redirect(['view', 'id' => $item->ID]);

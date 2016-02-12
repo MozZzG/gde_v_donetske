@@ -8,6 +8,7 @@ use app\models\LoginbusinessmanForm;
 use app\models\SignupbusinessmanForm;
 use app\models\SignupForm;
 use Yii;
+use yii\base\Response;
 use yii\base\View;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
@@ -29,6 +30,7 @@ use app\models\Subcategoryevent;
 use app\models\Users;
 use yii\helpers\ArrayHelper;
 use app\models\Establishmenttest;
+use yii\widgets\ActiveForm;
 
 class SiteController extends Controller
 {
@@ -149,8 +151,8 @@ class SiteController extends Controller
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            return 'ok';
         }
         return $this->render('login', [
             'model' => $model,
@@ -175,7 +177,7 @@ class SiteController extends Controller
         $cat = Category::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
         if ($model_login_bus->load(Yii::$app->request->post()) && $model_login_bus->login()) {
-            return $this->goBack();
+            return $this->redirect('office');
         }
         return $this->render('login', [
             'model' => $model,
@@ -223,26 +225,25 @@ class SiteController extends Controller
     }
 
     public function actionSignupbusinessman() {
-        if (!\Yii::$app->user->isGuest) {
+        /*if (!\Yii::$app->user->isGuest) {
             return $this->redirect(Url::to('office'));
         }
 
         $model = new LoginForm();
         $model_login_bus = new LoginbusinessmanForm();
-        $model_reg = new SignupForm();
+        $model_reg = new SignupForm();*/
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
         if ($model_bus->load(Yii::$app->request->post()) && $model_bus->signup()) {
-            return $this->redirect(Url::to('office'));
+            return null;
         }
-        return $this->render('login', [
-            'model' => $model,
-            'model_reg' => $model_reg,
+        $subcats = Subcategory::find()->where(['CategoryID' => $model_bus->category])->all();
+        $subcat = ArrayHelper::map($subcats, 'ID', 'Name');
+        return $this->renderPartial('reg_bus_access', [
             'model_bus' => $model_bus,
-            'model_login_bus' => $model_login_bus,
             'cats' => $cats,
-            'subcats' => ['' => ''],
+            'subcats' => $subcat,
         ]);
     }
 
@@ -624,7 +625,8 @@ class SiteController extends Controller
     public function actionTestevent() {
         $model = new EventtestForm();
         if ($model->load(Yii::$app->request->post()) && $model->Sendtoadmins()) {
-            return $this->render('office_sended_est');
+            //return $this->render('office_sended_est');
+            return true;
         }
         return false;
     }

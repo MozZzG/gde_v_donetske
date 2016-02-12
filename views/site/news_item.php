@@ -28,8 +28,8 @@ $this->registerJsFile('js/news.js');
     </div>
 
     <h1 class="news_zag"><?= $model->Name ?></h1><br>
-    <span class="date"><?= Yii::$app->formatter->asDate($model->Date) ?></span><span class="views news_item_views"><?= $model->Views ?></span><br>
-    <p><?= $model->Text ?></p>
+    <span class="date"><?= Yii::$app->formatter->asDate($model->Date) ?></span><span class="views news_item_views"><?= $model->Views ?></span><br><br>
+    <?= $model->Text ?>
 
     <div class="banner_big">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

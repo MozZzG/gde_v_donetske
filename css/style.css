@@ -585,6 +585,7 @@ footer .fb:hover {
 }
 #window_reg .modal-dialog {
     width: 690px;
+	background: linear-gradient(to top, #e7354f, #f74c52);
 }
 #window_soglas .modal-dialog {
     width: 80%;
@@ -960,6 +961,10 @@ a.logout {
 	width: 120px;
 	margin: 0 0 0 10px;
 }
+.about_block p.value {
+	float: left;
+	max-width: 370px;
+}
 .about_block .place {
 	font-size: 12px;
 	margin: 10px 0 0 10px;
@@ -1023,7 +1028,7 @@ a.logout {
 
 .est_white {
 	background: #fff;
-	padding: 0 20px;
+	padding: 0 20px 30px;
 }
 .est_white h2 {
 	padding: 15px 0;
@@ -1519,7 +1524,8 @@ h1.news_zag {
     padding-top: 15px;
 }
 .news_item_block p img {
-    max-width: 100%;
+	max-width: 1075px;
+	margin-left: -60px!important;
 }
 .news_item_block .banner_big {
     overflow: hidden;
@@ -1605,6 +1611,9 @@ h2.forum_zag a:hover {
 #video, #about, #map {
     width: 100%;
     display: none;
+}
+#map iframe {
+	width: 100%!important;
 }
 #video iframe {
     width: 100%;
@@ -1758,6 +1767,13 @@ h2.forum_zag a:hover {
     padding: 0;
     width: 100%;
     outline: none;
+}
+#est_edit #map p {
+	margin-top: 20px;
+}
+#est_edit #photos .about {
+	min-height: 100px;
+	margin-top: 0!important;
 }
 #est_edit .on_photo.value {
     max-width: 300px;

@@ -50,7 +50,7 @@ $(document).ready(function() {
             $(this).height($('.about_block').height());
         });
     }, 100);
-    
+
     setTimeout(resize_news(), 100);
     setTimeout(resize_rec(), 100);
     setTimeout(resize_events(), 300);
@@ -91,6 +91,8 @@ $(document).ready(function() {
     });
     $('#map_link').click(function(e) {
         e.preventDefault();
+        $('#map').height($('#myCarousel').height() - $('.establ_menu').height());
+        $('#map iframe').height($('#myCarousel').height() - $('.establ_menu').height());
         $('.establ_menu li').each(function() {
             $(this).removeClass('active');
         });

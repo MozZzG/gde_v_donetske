@@ -93,6 +93,29 @@ $(document).ready(function() {
         $('#window_reg').fadeOut();
     });
 
+    $('body').on('submit', '#sign_up', function(e) {
+        e.preventDefault();
+        var form = $(this).serialize();
+        $.ajax({
+            url: 'signupbusinessman', //Адрес подгружаемой страницы
+            type: 'post', //Тип запроса
+            data: form,
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            success: function (response) { //Если все нормально
+                if (!response) {
+                    $('#window_reg').modal('show');
+                }
+                else {
+                    $('.sign_up_form_block').html(response);
+                }
+            }
+        });
+    });
+
+    $('#window_reg').on('hidden.bs.modal', function() {
+        document.location.href = 'office';
+    });
+
     $('body').on('click', 'a.soglas', function(e) {
         e.preventDefault();
         $('#window_soglas').fadeIn();

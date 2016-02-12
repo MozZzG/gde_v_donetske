@@ -91,7 +91,7 @@ class EsttestForm extends Model
             $est_test->Phone = $this->Phone;
             $est_test->Address = $this->Address;
             $est_test->Website = $this->Website;
-            $est_test->Video = $this->Video;
+            $est_test->Video = str_replace('watch?v=', 'embed/', $this->Video);
             $est_test->Map = $this->Map;
             $est_test->Photo1 = $this->Photo1;
             $est_test->Photo2 = $this->Photo2;
