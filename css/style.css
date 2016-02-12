@@ -19,6 +19,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Helios';
+	src: url('../fonts/HeliosCondRegular.ttf');
+	url('../fonts/HeliosCondRegular.woff') format('woff'),
+	url('../fonts/HeliosCondRegular.ttf') format('ttf');
+}
 
 body {
 	margin: 0;
@@ -34,13 +40,14 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 h2 {
 	color: #000;
-	font-size: 25px;
+	font: 25px 'Helios';
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
 }
 h2 a {
     color: #000;
+	font-family: 'Helios';
 }
 ul {
 	margin: 0;
@@ -127,7 +134,7 @@ ul.menu li {
 }
 ul.menu li a {
 	color: #000;
-	font-size: 15px;
+	font: 15px 'Helios';
 }
 ul.menu.open li a {
     color: rgba(154, 151, 151, 0.87);
@@ -590,12 +597,12 @@ footer .fb:hover {
 #window_soglas .modal-dialog {
     width: 80%;
 }
-#window_reg .modal-content, #window_soglas .modal-content, #window_phone_error .modal-content {
+#window_reg .modal-content, #window_soglas .modal-content, #window_phone_error .modal-content, #window_thanks .modal-content {
     border-radius: 0;
     font-size: 23px;
     text-align: center;
 }
-#window_reg .modal-body, #window_soglas .modal-body, #window_phone_error .modal-body {
+#window_reg .modal-body, #window_soglas .modal-body, #window_phone_error .modal-body, #window_thanks .modal-body {
     font-size: 23px;
     padding: 0 15px 10px;
     max-height: 400px;
@@ -608,20 +615,20 @@ footer .fb:hover {
 #window_reg .modal-body p, #window_soglas .modal-body p {
     margin-top: 15px;
 }
-#window_reg .modal-footer {
+#window_reg .modal-footer, #window_thanks .modal-footer {
     font-size: 20px;
     text-align: center!important;
     border-top: 0!important;
     padding: 10px;
 }
-#window_reg .modal-header, #window_soglas .modal-header, #window_phone_error .modal-header {
+#window_reg .modal-header, #window_soglas .modal-header, #window_phone_error .modal-header, #window_thanks .modal-header {
     border-bottom: 0!important;
     padding: 5px;
 }
-#window_reg .modal-header button, #window_soglas .modal-header button, #window_phone_error .modal-header button {
+#window_reg .modal-header button, #window_soglas .modal-header button, #window_phone_error .modal-header button, #window_thanks .modal-header button {
     padding: 10px 10px 0 0;
 }
-#window_reg .modal-title, #window_soglas .modal-title, #window_phone_error .modal-title {
+#window_reg .modal-title, #window_soglas .modal-title, #window_phone_error .modal-title, #window_thanks .modal-title {
     font-size: 41px;
     display: inline-block;
     height: 60px;
@@ -1246,15 +1253,15 @@ span.rev_ans {
 .main_top p.cat {
 	color: rgba(0, 0, 0, 0.5);
 	margin-top: 7px;
-	font: 11px 'Europe';
+	font: 11px 'Helios';
 	text-transform: uppercase;
 }
 .main_top h2 {
 	line-height: 1.0;
-	font: 20px 'Europe';
+	font: 20px 'Helios';
 }
 .main_top p.about {
-	font: 13px 'Europe';
+	font: 13px 'Helios';
 }
 .main_top .podcat_top {
 	padding: 0 0 10px;
@@ -1284,7 +1291,7 @@ span.rev_ans {
 }
 .sales li a {
 	color: rgba(0, 0, 0, 0.91);
-	font: 14px 'PT Serif';
+	font: 14px 'Helios';
 	padding: 0 10px;
 	display: block;
 }
@@ -1306,6 +1313,7 @@ span.rev_ans {
 	border: 1px solid #e0e0e0;
 	border-right: 0;
 	font-size: 20px;
+	font-family: 'Helios';
 	cursor: pointer;
 	padding: 5px 0;
 }
@@ -1548,6 +1556,7 @@ h1.news_zag {
 }
 h2.forum_zag {
     font-size: 36px;
+	font-family: inherit;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 25px;
     margin-top: 25px;
@@ -1558,6 +1567,7 @@ h2.forum_zag a {
     background: linear-gradient(to top, #596272, #6c7685);
     color: #fff;
     font-size: 21px;
+	font-family: inherit;
     padding: 5px 20px 7px;
     margin: 3px 100px 0 0;
 }
@@ -1896,6 +1906,7 @@ h2.forum_zag a:hover {
 
 .test_events_block {
 	margin-top: 15px;
+	margin-bottom: 15px;
 	padding-top: 25px;
 	padding-bottom: 25px;
 }
@@ -2060,6 +2071,39 @@ h2.forum_zag a:hover {
 	position: relative;
 	margin-top: -35px;
 	margin-left: 340px;
+}
+
+.event_test_block {
+	margin-top: 20px;
+}
+.event_test_block .img {
+	float: left;
+	margin-right: 30px;
+	max-width: 40%;
+}
+.event_test_block .img img {
+	max-width: 100%;
+}
+.event_test_block table td {
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+#window_add_new .modal-dialog {
+	width: 760px;
+}
+#window_add_new .modal-content {
+	border-radius: 0;
+	font-size: 25px;
+	text-align: center;
+}
+#window_add_new #new_number {
+	border-radius: 0;
+	width: 315px;
+	margin: 15px auto 5px;
+}
+#window_add_new a {
+	color: inherit;
 }
 
 

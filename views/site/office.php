@@ -170,6 +170,38 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
                 'nextPageLabel' => '<img src="img/page_r.png" alt="">',
             ]); ?>
         </div>
+        <h2 class="text-center">Новости</h2>
+        <div class="est_white test_events_block">
+            <ul class="afisha news">
+                <?php
+                    $j= 0;
+                    foreach ($news as $item) {
+                        $j++;
+                ?>
+                    <li>
+                        <a href="news_item?id=<?= $item->ID ?>&partner=true">
+                            <div class="new_img"><img src="img/news/<?= $item->Photo ?>" alt=""></div>
+                            <p class="new_caption"><?= $item->Name ?></p>
+                            <p class="new_about"><?= $item->About ?></p>
+                        </a>
+                    </li>
+                <?php
+                    }
+                if ($j < 5) {
+                    ?>
+                    <li>
+                        <a href="#" id="add_news">
+                            <div class="new_img"><img src="img/news_null.jpg" alt=""></div>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+            <?= LinkPager::widget([
+                'pagination' => $pages_news,
+                'prevPageLabel' => '<img src="img/page_l.png" alt="">',
+                'nextPageLabel' => '<img src="img/page_r.png" alt="">',
+            ]); ?>
+        </div>
     </td>
     <td class="banner_col vert_top">
         <div class="banner"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -192,6 +224,38 @@ $rate = $est->Rating * 19 + floor($est->Rating) * 6;
         <div class="modal-content">
             <div class="modal-body">
 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="window_add_new" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                Укажите номер, по которому наш редактор<br>может уточнить все детали<br>
+                <input type="text" id="new_number" class="form-control">
+                <a href="#">отправить</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="window_thanks" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Заголовок модального окна -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <!-- Основное содержимое модального окна -->
+            <div class="modal-body">
+
+            </div>
+            <!-- Футер модального окна -->
+            <div class="modal-footer">
+                С уважением, администрация портала "Где в Донецке..?"
             </div>
         </div>
     </div>

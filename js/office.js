@@ -75,6 +75,27 @@ $(document).ready(function() {
                 if (response) {
                     $('#window_afisha .modal-body').html(response);
                     $('#window_afisha #eventtestform-date').attr('placeholder', 'выбрать дату');
+                    if ($('#window_afisha #eventtestform-date').val()) {
+                        $month = $('#window_afisha #eventtestform-date').val().substring(0, $('#window_afisha #eventtestform-date').val().indexOf(' '));
+                        switch ($month) {
+                            case 'January': {$month = '01'; break;}
+                            case 'February': {$month = '02'; break;}
+                            case 'March': {$month = '03'; break;}
+                            case 'April': {$month = '04'; break;}
+                            case 'May': {$month = '05'; break;}
+                            case 'June': {$month = '06'; break;}
+                            case 'July': {$month = '07'; break;}
+                            case 'August': {$month = '08'; break;}
+                            case 'September': {$month = '09'; break;}
+                            case 'October': {$month = '10'; break;}
+                            case 'November': {$month = '11'; break;}
+                            case 'December': {$month = '12'; break;}
+                        }
+                        $year = $('#window_afisha #eventtestform-date').val().substring($('#window_afisha #eventtestform-date').val().indexOf(',')+1);
+                        $day = $('#window_afisha #eventtestform-date').val().substring($('#window_afisha #eventtestform-date').val().indexOf(' ')+1, $('#window_afisha #eventtestform-date').val().indexOf(','))
+                        if ($day.length == 1) $day = '0'+$day;
+                        $('#window_afisha #eventtestform-date').val($year+'-'+$month+'-'+$day);
+                    }
                     $('#window_afisha').modal('show');
                 }
             }
@@ -115,6 +136,71 @@ $(document).ready(function() {
                     $('#window_afisha #eventtestform-photo').val('');
                     $('#window_afisha .img img').attr('src', 'img/afisha_null.jpg');
                     $('#del_photo_event').hide();
+                }
+            }
+        });
+    });
+    $('#window_afisha').on('submit', '#event_form', function(e) {
+        e.preventDefault();
+        var form = $(this).serialize();
+        $.ajax({
+            url: 'test_event?est='+$('#est_id').val(), //Адрес подгружаемой страницы
+            type: 'post', //Тип запроса
+            data: form,
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            success: function (response) { //Если все нормально
+                if (!response) {
+                    $('#window_afisha').modal('hide');
+                    $('#window_thanks .modal-title').html('Спасибо за сотрудничество!');
+                    $('#window_thanks .modal-body').html('Ваша афиша была отправлена на проверку. Как только она будет размещена на сайте, вы получите уведомление на email.');
+                    $('#window_thanks').modal('show');
+                }
+                else {
+                    $('#window_afisha .modal-body').html(response);
+                    if ($('#window_afisha #eventtestform-date').val()) {
+                        $month = $('#window_afisha #eventtestform-date').val().substring(0, $('#window_afisha #eventtestform-date').val().indexOf(' '));
+                        switch ($month) {
+                            case 'January': {$month = '01'; break;}
+                            case 'February': {$month = '02'; break;}
+                            case 'March': {$month = '03'; break;}
+                            case 'April': {$month = '04'; break;}
+                            case 'May': {$month = '05'; break;}
+                            case 'June': {$month = '06'; break;}
+                            case 'July': {$month = '07'; break;}
+                            case 'August': {$month = '08'; break;}
+                            case 'September': {$month = '09'; break;}
+                            case 'October': {$month = '10'; break;}
+                            case 'November': {$month = '11'; break;}
+                            case 'December': {$month = '12'; break;}
+                        }
+                        $year = $('#window_afisha #eventtestform-date').val().substring($('#window_afisha #eventtestform-date').val().indexOf(',')+1);
+                        $day = $('#window_afisha #eventtestform-date').val().substring($('#window_afisha #eventtestform-date').val().indexOf(' ')+1, $('#window_afisha #eventtestform-date').val().indexOf(','))
+                        if ($day.length == 1) $day = '0'+$day;
+                        $('#window_afisha #eventtestform-date').val($year+'-'+$month+'-'+$day);
+                    }
+                    $('#event_cat').css('borderColor', 'red');
+                }
+            }
+        });
+    });
+
+
+    $('body').on('click', '#add_news', function(e) {
+        e.preventDefault();
+        $('#window_add_new').modal('show');
+    });
+    $('body').on('click', '#window_add_new a', function(e) {
+        e.preventDefault();
+        var phone = $('#window_add_new #new_number').val();
+        var est = $('#est_id').val();
+        $.ajax({
+            url: 'add_new?phone='+phone+'&est='+est,
+            success: function(response){
+                if (response) {
+                    $('#window_add_new').modal('hide');
+                    $('#window_thanks .modal-title').html('Спасибо за Ваш заказ!');
+                    $('#window_thanks .modal-body').html('В ближайшее время наш менеджер с Вами свяжется.');
+                    $('#window_thanks').modal('show');
                 }
             }
         });

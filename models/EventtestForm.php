@@ -60,7 +60,7 @@ class EventtestForm extends Model
             $event_test->EstablishmentID = $this->EstablishmentID;
             $event_test->EventID = $this->EventID;
             if ($event_test->save()) {
-                mail('komarovats93@gmail.com', $event_test->Name.' отправлено на проверку', 'Афиша "'.$event_test->Name.'" была отправлена на проверку.');
+                mail('komarovats93@gmail.com', $event_test->Name.' отправлено на проверку', 'Афиша "'.$event_test->Name.'" была отправлена на проверку. Посмотреть новый вариант можно здесь: http://gdevdonetske.com/event_test?id='.$event_test->ID);
                 return true;
             }
         }

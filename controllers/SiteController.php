@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\EsttestForm;
+use app\models\Eventtest;
 use app\models\EventtestForm;
 use app\models\LoginbusinessmanForm;
 use app\models\SignupbusinessmanForm;
@@ -279,6 +280,10 @@ class SiteController extends Controller
             $pages_events = new Pagination(['totalCount' => $query_events->count()+1, 'pageSize' => 5]);
             $events = $query_events->offset($pages_events->offset)->limit($pages_events->limit)->all();
 
+            $query_news = Newspartner::find()->where(['EstablishmentID' => $est->ID]);
+            $pages_news = new Pagination(['totalCount' => $query_news->count()+1, 'pageSize' => 5]);
+            $news = $query_news->offset($pages_news->offset)->limit($pages_news->limit)->all();
+
             if ($model->load(Yii::$app->request->post()) && $model->Sendtoadmins($est->ID, $est->SubcategoryID)) {
                 return $this->render('office_sended_est');
             }
@@ -288,8 +293,16 @@ class SiteController extends Controller
                 'model' => $model,
                 'events' => $events,
                 'pages_events' => $pages_events,
+                'news' => $news,
+                'pages_news' => $pages_news,
             ]);
         }
+    }
+
+    public function actionAddnews($phone, $est) {
+        $est = Establishment::find()->where(['ID' => $est])->one();
+        mail('komarovats93@gmail.com', 'Заказ новости', 'Владелец заведения "'.$est->Name.'" хочет заказать новость. Свяжитесь с ним по телефону: '.$phone);
+        return true;
     }
 
     public function actionAddestimg() {
@@ -553,6 +566,39 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionEventtest($id) {
+        $ev = Eventtest::find()->where(['ID' => $id])->one();
+        $user = Users::find()->where(['ID' => $ev->establishment->UserID])->one();
+        $user_mail = $user->Email;
+        $subcat = Subcategoryevent::find()->where(['CategoryeventID' => $ev->categoryevent->ID])->one();
+        return $this->render('event_test', [
+            'model' => $ev,
+            'user_mail' => $user_mail,
+            'subcat' => $subcat,
+        ]);
+    }
+
+    public function actionAddevent($id) {
+        $test = Eventtest::find()->where(['ID' => $id])->one();
+        $event = Event::find()->where(['ID' => $test->EventID])->one();
+        $event->Photo = $test->Photo;
+        $event->Date = $test->Date;
+        $event->Name = $test->Name;
+        $event->Place = $test->Place;
+        $event->Time = $test->Time;
+        $event->Contacts = $test->Contacts;
+        $event->CategoryeventID = $test->CategoryeventID;
+        $event->SubcategoryeventID = $test->SubcategoryeventID;
+        $event->EstablishmentID = $test->EstablishmentID;
+        $event->New = 0;
+        if ($event->save()) {
+            $test->delete();
+            $user = Users::find()->where(['ID' => $event->establishment->UserID])->one();
+            //mail($user->Email, $event->Name.' прошло проверку', 'Ваша афиша "'.$event->Name.'" была опубликована на сайте "Где в Донецке..?": http://gdevdonetske.com/establishment?id='.$event->EstablishmentID.' Благодарим за сотрудничество!');
+            $this->redirect(Url::to(['establishment', 'id' => $event->EstablishmentID]));
+        }
+    }
+
     public function actionAddest($id) {
         $test = Establishmenttest::find()->where(['ID' => $id])->one();
         $est = Establishment::find()->where(['ID' => $test->EstablishmentID])->one();
@@ -595,7 +641,7 @@ class SiteController extends Controller
         $cat = Categoryevent::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
         if ($event) {
-            $ev = Event::find()->where(['ID' => $event, 'New' => 1])->one();
+            $ev = Event::find()->where(['ID' => $event])->one();
             $model->Photo = $ev->Photo;
             $model->Name = $ev->Name;
             $model->Date = $ev->Date;
@@ -622,13 +668,23 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionTestevent() {
+    public function actionTestevent($est) {
         $model = new EventtestForm();
+        $est = Establishment::find()->where(['ID' => $est])->one();
+        $cat = Categoryevent::find()->all();
+        $cats = ArrayHelper::map($cat, 'ID', 'Name');
         if ($model->load(Yii::$app->request->post()) && $model->Sendtoadmins()) {
-            //return $this->render('office_sended_est');
-            return true;
+            return null;
         }
-        return false;
+        $subcats = Subcategoryevent::find()->where(['CategoryeventID' => $model->CategoryeventID])->all();
+        $event = $model->EventID;
+        return $this->renderPartial('event_form', [
+            'model' => $model,
+            'est' => $est,
+            'cats' => $cats,
+            'subcats' => $subcats,
+            'event' => $event,
+        ]);
     }
 
     public function actionAddimgevent() {
