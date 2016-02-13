@@ -95,6 +95,8 @@ class ManagerController extends Controller
         $user = Users::find()->where(['ID' => $ev->establishment->UserID])->one();
         $user_mail = $user->Email;
         $subcat = Subcategoryevent::find()->where(['CategoryeventID' => $ev->categoryevent->ID])->one();
+        if ($subcat) $subcat = $subcat->Name;
+        else $subcat = '';
         return $this->render('event_test', [
             'model' => $ev,
             'user_mail' => $user_mail,

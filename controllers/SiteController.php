@@ -87,12 +87,11 @@ class SiteController extends Controller
             ->limit(10)
             ->all();
         $establishments = Establishment::find()
-            ->where(['IndexTop' => true,])
+            ->where(['IndexTop' => true])
             ->andWhere(['New' => 0])
             ->orderBy(['Rating' => SORT_DESC])
             ->limit(2)
             ->all();
-
         $cinemas = Event::find()
             ->where(['IndexTop' => 1])
             ->andWhere(['CategoryeventID' => 3, 'New' => 0])
@@ -114,7 +113,7 @@ class SiteController extends Controller
         $db_forum = new Connection([
             'dsn' => 'mysql:host=localhost;dbname=forum',
             'username' => 'root',
-            'password' => '',
+            'password' => 'avram007700',
             'charset' => 'utf8',
         ]);
         $posts = $db_forum->createCommand('SELECT questions.ID, Caption, DateTime, categories.Name AS Cat, users.Name, LastName, Avatar FROM questions, categories, users WHERE questions.UserID=users.ID AND questions.CategoryID=categories.ID ORDER BY DateTime DESC LIMIT 14')
@@ -150,7 +149,7 @@ class SiteController extends Controller
         $model_bus = new SignupbusinessmanForm();
         $cat = Category::find()->all();
         $cats = ArrayHelper::map($cat, 'ID', 'Name');
-        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goHome();
         }
         return $this->render('login', [

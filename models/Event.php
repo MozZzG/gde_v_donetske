@@ -44,7 +44,9 @@ class Event extends \yii\db\ActiveRecord
             [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'integer'],
             [['Time'], 'string', 'max' => 50],
             [['Photo', 'Name', 'Place', 'Contacts', 'Time'], 'default', 'value' => ''],
-            [['CategoryeventID', 'SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'default', 'value' => 0],
+            [['Date'], 'default', 'value' => '0000-00-00'],
+            [['CategoryeventID'], 'default', 'value' => 1],
+            [['SubcategoryeventID', 'EstablishmentID', 'IndexTop', 'New'], 'default', 'value' => 0],
         ];
     }
 

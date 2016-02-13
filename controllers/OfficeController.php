@@ -121,7 +121,7 @@ class OfficeController extends Controller
 
     public function actionAddnews($phone, $est) {
         $est = Establishment::find()->where(['ID' => $est])->one();
-        mail('komarovats93@gmail.com', 'Заказ новости', 'Владелец заведения "'.$est->Name.'" хочет заказать новость. Свяжитесь с ним по телефону: '.$phone);
+        //mail('komarovats93@gmail.com', 'Заказ новости', 'Владелец заведения "'.$est->Name.'" хочет заказать новость. Свяжитесь с ним по телефону: '.$phone);
         return true;
     }
 
@@ -158,6 +158,7 @@ class OfficeController extends Controller
         }
         else {
             $ev = new Event();
+            $ev->EstablishmentID = $est->ID;
             $ev->New = 1;
             $ev->save();
             $event = $ev->ID;

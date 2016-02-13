@@ -88,7 +88,7 @@ $config = [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=forum',
             'username' => 'root',
-            'password' => '',
+            'password' => 'avram007700',
             'charset' => 'utf8',
         ],
     ],

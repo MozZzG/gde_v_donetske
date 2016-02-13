@@ -35,7 +35,7 @@ use yii\helpers\Url;
             <td class="event_form_label">категория:</td><td><?= $model->categoryevent->Name ?></td>
         </tr>
         <tr>
-            <td class="event_form_label">подкатегория:</td><td><?= $subcat->Name ?></td>
+            <td class="event_form_label">подкатегория:</td><td><?= $subcat ?></td>
         </tr>
         <tr>
             <td class="event_form_label">дата:</td><td><?= $model->Date ?></td>
